@@ -32,6 +32,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="tHr-l8-S16"/>
                     <connections>
+                        <outlet property="tableView" destination="lc4-Y7-CR1" id="YSH-q1-tvc"/>
                         <segue destination="ryl-Ei-LIc" kind="show" identifier="toDetailsVs" id="HJ7-EJ-wsz"/>
                     </connections>
                 </viewController>
@@ -39,28 +40,31 @@
             </objects>
             <point key="canvasLocation" x="562.59541984732823" y="7.746478873239437"/>
         </scene>
-        <!--View Controller-->
+        <!--DetailsVC-->
         <scene sceneID="kaN-os-wVD">
             <objects>
-                <viewController id="ryl-Ei-LIc" sceneMemberID="viewController">
+                <viewController id="ryl-Ei-LIc" customClass="detailsVC" customModule="SimpsonBook" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WCl-6E-l5r">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kc4-7h-vec">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kc4-7h-vec">
                                 <rect key="frame" x="56" y="143" width="282" height="346"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="name label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i0K-B8-GZr">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="name label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i0K-B8-GZr">
                                 <rect key="frame" x="56" y="514" width="282" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Dpy-2g-Hrj"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="job label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdZ-LZ-dah">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="job label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdZ-LZ-dah">
                                 <rect key="frame" x="56" y="567" width="282" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="ahk-yX-hlK"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -68,8 +72,25 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="e6e-Nb-hXq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zdZ-LZ-dah" firstAttribute="top" secondItem="i0K-B8-GZr" secondAttribute="bottom" constant="8" id="5Mb-Cn-5pv"/>
+                            <constraint firstItem="Kc4-7h-vec" firstAttribute="leading" secondItem="e6e-Nb-hXq" secondAttribute="leading" constant="56" id="6RV-dy-Acp"/>
+                            <constraint firstItem="Kc4-7h-vec" firstAttribute="centerX" secondItem="WCl-6E-l5r" secondAttribute="centerX" id="P2K-VM-LvD"/>
+                            <constraint firstItem="i0K-B8-GZr" firstAttribute="top" secondItem="Kc4-7h-vec" secondAttribute="bottom" constant="25" id="Qat-CC-Vx2"/>
+                            <constraint firstItem="Kc4-7h-vec" firstAttribute="leading" secondItem="i0K-B8-GZr" secondAttribute="leading" id="Xpc-kj-O0v"/>
+                            <constraint firstItem="i0K-B8-GZr" firstAttribute="trailing" secondItem="zdZ-LZ-dah" secondAttribute="trailing" id="b46-Hq-2tS"/>
+                            <constraint firstItem="i0K-B8-GZr" firstAttribute="leading" secondItem="zdZ-LZ-dah" secondAttribute="leading" id="ehB-f2-6H0"/>
+                            <constraint firstItem="Kc4-7h-vec" firstAttribute="top" secondItem="e6e-Nb-hXq" secondAttribute="top" constant="40" id="f0i-S4-5di"/>
+                            <constraint firstItem="Kc4-7h-vec" firstAttribute="trailing" secondItem="i0K-B8-GZr" secondAttribute="trailing" id="jBz-4M-aR9"/>
+                            <constraint firstItem="e6e-Nb-hXq" firstAttribute="bottom" secondItem="zdZ-LZ-dah" secondAttribute="bottom" constant="206" id="vom-Sp-Ogw"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vmk-nR-Q4n"/>
+                    <connections>
+                        <outlet property="imageView" destination="Kc4-7h-vec" id="jCH-1B-FId"/>
+                        <outlet property="jobLabel" destination="zdZ-LZ-dah" id="hmC-mw-r6n"/>
+                        <outlet property="nameLabel" destination="i0K-B8-GZr" id="5rW-dz-Asw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="doM-dE-CRv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
