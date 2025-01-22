@@ -33,7 +33,7 @@
                     <navigationItem key="navigationItem" id="tHr-l8-S16"/>
                     <connections>
                         <outlet property="tableView" destination="lc4-Y7-CR1" id="YSH-q1-tvc"/>
-                        <segue destination="ryl-Ei-LIc" kind="show" identifier="toDetailsVs" id="HJ7-EJ-wsz"/>
+                        <segue destination="ryl-Ei-LIc" kind="show" identifier="toDetailVC" id="HJ7-EJ-wsz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -13,6 +13,8 @@ class ViewController: UIViewController , UITableViewDelegate , UITableViewDataSo
     @IBOutlet weak var tableView: UITableView!
     
     var mySimpsons = [Simpson]()
+    var chosenSimpson : Simpson?
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +50,18 @@ class ViewController: UIViewController , UITableViewDelegate , UITableViewDataSo
         let cell = UITableViewCell() // Hücre oluşturma
         cell.textLabel?.text = mySimpsons[indexPath.row].name
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) { // seçilen simpsonu diğer sayfaya göndermek için
+        chosenSimpson = mySimpsons[indexPath.row]
+        self.performSegue(withIdentifier: "toDetailVC", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {  // segueleri birbirinden ayırma ve o segue seçildiğinde ne yapılacağını yazma
+        if segue.identifier == "toDetailVC" {
+            let destinationVC = segue.destination as! detailsVC
+            destinationVC.selectedSimpson = chosenSimpson
+        }
     }
     
     
